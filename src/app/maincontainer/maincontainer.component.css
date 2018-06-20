@@ -1,0 +1,10 @@
+.main-container {
+    padding-top: 81px !important;
+    padding-left: 251px !important;
+    padding: 20px;
+    position: absolute;
+    overflow-y: auto;
+    background-color: #EDEDED;
+    width: 100%;
+}
+

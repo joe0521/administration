@@ -1,0 +1,35 @@
+<div class="left-sidebar" id="style-1">
+
+  <ul class="sidebar-elements">
+      <li class="divider">Menu</li>
+      
+      <li class="parent" id="accordion">
+          <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+             <i class="far fa-newspaper"></i>
+              <span> Articles</span>
+              <span class="caret"></span>
+          </a>
+          <ul class="sub-menu collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+              <li><a routerLink="/articles" routerLinkActive="active">Liste des articles</a>
+              </li>
+              <li><a routerLink="/add-article" routerLinkActive="active">Ajouter un article</a>
+              </li>
+          </ul>
+      </li>
+      <li class="parent" id="accordion">
+          <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+             <i class="fas fa-envelope"></i>
+              <span> Mailing</span>
+              <span class="caret"></span>
+          </a>
+          <ul class="sub-menu collapse" id="collapseTwo" data-parent="#accordion">
+              <li><a href="#">Liste des adresses</a>
+              </li>
+              <li><a href="#">Messages envoyés</a>
+              </li>
+              <li><a href="#">Nouveau message</a>
+              </li>
+          </ul>
+      </li>
+  </ul>
+</div>

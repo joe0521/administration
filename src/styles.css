@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #EDEDED !important;
+    /*background-color: #EDEDED !important;*/
+    overflow-x: hidden;
+}
+table {
+    margin-bottom: 0px !important;
+    border: 1px solid #DDD;
+}
+.card-table {
+    width: 100%
+}
+.main-container .card-header {
+    text-align: left;
+    padding-top: 10px;
+    font-size: 1.4em
+}
+.card-header .tools {
+    float: right;
+    padding-top: 8px;
+    padding-right: 10px
+}
+.card-body {
+    padding-bottom: 10px;
+}
+.main-container>.card {
+    border-top: 0 !important;
+}

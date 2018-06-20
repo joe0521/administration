@@ -1,0 +1,12 @@
+.title-bar {
+    border-top: 3px solid #4285f4;
+    border-bottom: 1px solid #DDD
+}
+.logout {
+    font-size: 1.4em;
+    color: #888 !important;
+}
+.logout:hover {
+    color: #555 !important;
+    cursor: pointer;
+}
