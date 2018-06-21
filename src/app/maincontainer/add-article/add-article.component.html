@@ -7,28 +7,44 @@
     <!-- FIN TOOLS -->
   </div>
   <!-- FIN CARD-HEADER -->
-  <div class="card-body">
+  <form class="card-body" (ngSubmit)="onSubmit(formRef)" #formRef="ngForm">
     <div class="form-group">
       <label for="titre" class="label-titre">Titre:</label>
-      <input type="text" class="form-control" id="text" placeholder="Titre de l'article">
+      <input
+        type="text"
+        class="form-control"
+        id="titre"
+        placeholder="Titre de l'article"
+        ngModel
+        name="titre"
+        required>
     </div>
     <div class="form-group">
       <label for="categorie" class="label-titre">Catégorie:</label>
-      <select id="categorie" class="form-control">
-        <option selected>Categorie1</option>
-        <option>Categorie2</option>
-        <option>Categorie3</option>
+      <select id="categorie"
+        class="form-control"
+        ngModel
+        name="categorie"
+        required>
+        <option disabled selected hidden value="">Selectionez une catéorie...</option>
+        <option *ngFor="let categorie of categories | async">{{ categorie.nom }}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="textarea" class="label-titre">Texte:</label>
-      <textarea class="form-control" id="textarea" rows="10"></textarea>
+      <label for="texte" class="label-titre">Texte:</label>
+      <textarea
+        class="form-control"
+        id="texte"
+        rows="10"
+        ngModel
+        name="texte"
+        required></textarea>
     </div>
     <div class="clearfix">
-      <button type="submit" class="btn btn-success float-right fa-button">
+      <button type="submit" class="btn btn-success float-right fa-button" [disabled]="!formRef.valid">
         <i class="fas fa-plus-circle"></i> Ajouter</button>
     </div>
-  </div>
+  </form>
   <!-- FIN CARD-BODY -->
 </div>
 <!-- FIN CARD-TABLE -->

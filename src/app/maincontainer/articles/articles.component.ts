@@ -41,7 +41,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
     this.itemsSubscription = this.items.subscribe((itemsList: any[]) => {
         this.totalArticles = itemsList.length;
         this.isLoading = false;
-        this.articlesList = itemsList;
+        this.articlesList = itemsList.reverse();
         this.totalPages = Math.ceil(this.totalArticles / this.artPerPages);
       }
     );

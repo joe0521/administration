@@ -5,3 +5,12 @@
     font-size: 1 rem;
     margin-bottom: 2px;
 }
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+select.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
