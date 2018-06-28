@@ -57,7 +57,7 @@
           <td class="article-title" (click)="affArticle(item.key)">
             <span>{{ item.titre }}</span>
             <span class="article-apercu">
-              {{ item.texte.substring(0,100)+'...'}}
+              {{ html2text(item.texte).substring(0,100)+'...'}}
             </span>
           </td>
           <td>{{ item.categorie }}</td>

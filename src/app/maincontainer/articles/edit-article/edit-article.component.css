@@ -1,0 +1,69 @@
+.label-titre {
+    color: #b0b0b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1 rem;
+    margin-bottom: 2px;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+select.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+input.ng-touched.ng-dirty {
+    border: 1px solid forestgreen;
+}
+select.ng-dirty.ng-touched {
+    border: 1px solid forestgreen;
+}
+textarea.ng-dirty.ng-touched {
+    border: 1px solid forestgreen;
+}
+.spinner {
+    width: 50px;
+    height: 38px;
+    text-align: center;
+    font-size: 10px;
+  }
+  .spinner > div {
+    margin: 1px !important;
+    background-color: #AAA;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  .spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  .spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  .spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  .spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }

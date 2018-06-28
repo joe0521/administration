@@ -9,6 +9,9 @@ import { MaincontainerComponent } from './maincontainer/maincontainer.component'
 import { ArticlesComponent } from './maincontainer/articles/articles.component';
 import { AddArticleComponent } from './maincontainer/add-article/add-article.component';
 
+// QUILL WYSIWYG
+import { CKEditorModule } from 'ng2-ckeditor';
+
 // firebase
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,6 +19,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 // ROUTAGE
 import { Routes, RouterModule } from '@angular/router';
+import { EditArticleComponent } from './maincontainer/articles/edit-article/edit-article.component';
+import { EmailListComponent } from './maincontainer/email-list/email-list.component';
 
 // CONSTANTE DE CONFIGURATION DE FIREBASE
 const CONFIG: FirebaseAppConfig = {
@@ -31,6 +36,8 @@ const MYROUTES: Routes = [
   { path: '', redirectTo: '/articles', pathMatch: 'full' },
   { path: 'articles', component: ArticlesComponent },
   { path: 'add-article', component: AddArticleComponent },
+  { path: 'articles/edit/:id', component: EditArticleComponent },
+  { path: 'emails', component: EmailListComponent },
 ];
 
 @NgModule({
@@ -40,14 +47,17 @@ const MYROUTES: Routes = [
     SidemenuComponent,
     MaincontainerComponent,
     ArticlesComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    EditArticleComponent,
+    EmailListComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(CONFIG),
     AngularFireDatabaseModule,
     RouterModule.forRoot(MYROUTES),
-    FormsModule
+    FormsModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -14,13 +14,26 @@ import { Observable } from 'rxjs';
 export class AddArticleComponent implements OnInit {
   categories: Observable<any[]>;
   dbArticelsRef = null;
+  /************/
+  /* CkEditor */
+  name = 'ng2-ckeditor';
+  ckeConfig: any;
+  mycontent: string;
+  log = '';
+  @ViewChild('myckeditor') ckeditor: any;
 
   constructor(db: AngularFireDatabase, private route: Router) {
     this.categories = db.list('categories').valueChanges();
     this.dbArticelsRef = db.list('articles');
-   }
+  }
 
   ngOnInit() {
+    this.ckeConfig = {
+      allowedContent: false,
+      forcePasteAsPlainText: true,
+      removeButtons: 'Save,Find,Replace,Form,Print,Preview,Subscript' +
+      ',SelectAll,Superscript,Scayt,Styles,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,Language,Flash,HiddenField'
+    };
   }
 
   onSubmit(formRef: NgForm) {
@@ -35,13 +48,13 @@ export class AddArticleComponent implements OnInit {
       titre: formRef.value.titre,
       date: currDate,
       categorie: formRef.value.categorie,
-      texte: formRef.value.texte
+      texte: this.mycontent
     };
 
     // Ajout de l'objet à la base de donnée
-    this.dbArticelsRef.push(sendingObj);
+     this.dbArticelsRef.push(sendingObj);
 
-    this.route.navigate(['/articles']);
+     this.route.navigate(['/articles']);
   }
 
 }

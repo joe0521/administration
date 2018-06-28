@@ -1,0 +1,42 @@
+<div class="card card-table">
+  <div class="card-header">
+    GESTION DES ADRESSES
+    <div class="tools">
+    </div>
+    <!--FIN TOOLS -->
+  </div>
+  <div class="card-body">
+    <div>
+      <h5>Nombre total d'adresses mail:
+        <span class="badge badge-primary">{{ totalEmails }}</span>
+      </h5>
+    </div>
+    Supprimer une adresse:
+    <div class="email-search">
+      <div class="input-group input-search">
+        <input type="text"
+          email placeholder="Entrez une adresse"
+          class="form-control"
+          [(ngModel)]="searchString"
+          (input)="onChange()">
+        <span class="input-group-btn">
+          <button
+            type="button"
+            class="btn btn-secondary del-btn"
+            *ngIf="selectedItem"
+            (click)="onDeleteEmail()">
+            <i class="fas fa-trash"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="list-group mail-list-container"
+  *ngIf="searchEmails">
+  <div *ngIf="!searchEmails.length" class="list-group-item">Aucune adresse trouvée...</div>
+  <div *ngFor="let email of searchEmails">
+    <a class="list-group-item list-group-item-action"
+      (click)="emailSelected(email)">{{ email.nom }}</a>
+  </div>
+</div>

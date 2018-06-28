@@ -1,0 +1,56 @@
+button.del-btn {
+    border: none;
+    height: 36px;
+    border-radius: 0px !important;
+    background-color: transparent;
+    color: #888 !important;
+}
+.del-btn:hover {
+    background-color: red!important;
+    color: white !important;
+}
+.input-search .input-group-btn {
+    position: absolute;
+    display: block;
+    width: auto;
+    top: 1px;
+    right: 1px;
+    z-index: 3;
+}
+.mail-list-container {
+    max-height: 500px !important;
+    overflow-y: auto;
+    width: 97%;
+    margin: auto;
+    position: relative;
+    top: -10px;
+    -webkit-box-shadow: 3px 3px 10px 1px rgba(105,104,105,0.75);
+    -moz-box-shadow: 3px 3px 10px 1px rgba(105,104,105,0.75);
+    box-shadow: 3px 3px 10px 1px rgba(105,104,105,0.75);
+}
+.mail-list-container::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.mail-list-container::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.mail-list-container::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #DDD;
+}
+.mail-list-container a:hover {
+    cursor: pointer;
+}

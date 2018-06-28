@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 // FIREBASE
 import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-articles',
@@ -28,7 +30,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
   // Booleen pour le loading screen
   isLoading = true;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(db: AngularFireDatabase, private router: Router) {
     this.itemsRef = db.list('articles');
     this.items = this.itemsRef.snapshotChanges().pipe(
       map(changes =>
@@ -50,8 +52,9 @@ export class ArticlesComponent implements OnInit, OnDestroy {
     this.itemsSubscription.unsubscribe();
     this.itemKey = null;
   }
-  affArticle(itemKey) {
-    console.log('Article Cliqué Id: ', itemKey);
+  affArticle(id) {
+    // On charge la page d'édition de l'article
+    this.router.navigate(['articles', 'edit', id]);
   }
   // Clic sur le bouton supprimer
   removeArticle(itemKey) {
@@ -85,6 +88,14 @@ export class ArticlesComponent implements OnInit, OnDestroy {
   setPage(index) {
     this.activePage = index;
     this.affTab();
+  }
+  // Convertion html en text
+  html2text(html) {
+    const tag = document.createElement('div');
+    tag.innerHTML = html;
+
+    return tag.innerText;
+
   }
   // Fonctione retourne le tableau de la partie a afficher
   affTab() {
