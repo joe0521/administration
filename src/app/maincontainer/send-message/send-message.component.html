@@ -1,0 +1,33 @@
+<div class="card card-table">
+  <div class="card-header">
+    ENVOYER UN MESSAGE
+    <div class="tools">
+      <!--Emplacement des outils -->
+    </div>
+    <!-- FIN TOOLS -->
+  </div>
+  <!-- FIN CARD-HEADER -->
+  <form class="card-body" (ngSubmit)="onSend(formRef)" #formRef="ngForm">
+    <div class="form-group">
+      <label for="objet" class="label-titre">Objet:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="objet"
+        ngModel
+        name="objet"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="texte" class="label-titre">Texte:</label>
+      <ckeditor [(ngModel)]="mycontent" [ngModelOptions]="{standalone: true}" #myckeditor [config]="ckeConfig" debounce="500">
+      </ckeditor>
+    </div>
+    <div class="clearfix">
+      <button type="submit" class="btn btn-success float-right fa-button" [disabled]="!formRef.valid">
+        <i class="fas fa-paper-plane"></i> Envoyer</button>
+    </div>
+  </form>
+  <!-- FIN CARD-BODY -->
+</div>
+<!-- FIN CARD-TABLE -->

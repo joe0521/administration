@@ -21,6 +21,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { Routes, RouterModule } from '@angular/router';
 import { EditArticleComponent } from './maincontainer/articles/edit-article/edit-article.component';
 import { EmailListComponent } from './maincontainer/email-list/email-list.component';
+import { SendMessageComponent } from './maincontainer/send-message/send-message.component';
 
 // CONSTANTE DE CONFIGURATION DE FIREBASE
 const CONFIG: FirebaseAppConfig = {
@@ -38,6 +39,7 @@ const MYROUTES: Routes = [
   { path: 'add-article', component: AddArticleComponent },
   { path: 'articles/edit/:id', component: EditArticleComponent },
   { path: 'emails', component: EmailListComponent },
+  { path: 'send-message', component: SendMessageComponent }
 ];
 
 @NgModule({
@@ -49,7 +51,8 @@ const MYROUTES: Routes = [
     ArticlesComponent,
     AddArticleComponent,
     EditArticleComponent,
-    EmailListComponent
+    EmailListComponent,
+    SendMessageComponent
   ],
   imports: [
     BrowserModule,
