@@ -24,8 +24,19 @@
       </ckeditor>
     </div>
     <div class="clearfix">
-      <button type="submit" class="btn btn-success float-right fa-button" [disabled]="!formRef.valid">
-        <i class="fas fa-paper-plane"></i> Envoyer</button>
+      <button type="submit" class="btn btn-success float-right fa-button" [disabled]="!formRef.valid||!mycontent" *ngIf="!sending">
+        <i class="fas fa-paper-plane"></i> Envoyer
+      </button>
+      <div class="spinner" *ngIf="sending&&!sendingError">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="sendingError">
+        Erreur lors de l'envoi des messages!
+      </div>
     </div>
   </form>
   <!-- FIN CARD-BODY -->

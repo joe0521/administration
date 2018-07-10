@@ -9,6 +9,9 @@ import { MaincontainerComponent } from './maincontainer/maincontainer.component'
 import { ArticlesComponent } from './maincontainer/articles/articles.component';
 import { AddArticleComponent } from './maincontainer/add-article/add-article.component';
 
+// HTTPClient Module
+import { HttpClientModule } from '@angular/common/http';
+
 // QUILL WYSIWYG
 import { CKEditorModule } from 'ng2-ckeditor';
 
@@ -60,7 +63,8 @@ const MYROUTES: Routes = [
     AngularFireDatabaseModule,
     RouterModule.forRoot(MYROUTES),
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
